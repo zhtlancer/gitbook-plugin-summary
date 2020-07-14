@@ -16,7 +16,7 @@ const getPathTree = config =>
     .map(List)
 
 const getFilesRecursively = config => {
-  const mdFiles = getPaths(config, `*/**/*.md`)
+  const mdFiles = getPaths(config, `**/*.md`)
   const directories = getPaths(config, '**/*/')
 
   return Task.of([

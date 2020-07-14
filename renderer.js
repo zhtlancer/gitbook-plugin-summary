@@ -58,7 +58,14 @@ const disabledEntries = (depth, title) =>
 const linkEntries = (depth, title, path) =>
   depthEntries(depth, `- [${title}](${path})`)
 
-const getFileDepth = path => path.match(/\//g).length
+const getFileDepth = path => {
+  match_result = path.match(/\//g)
+  if (match_result) {
+    return match_result.length
+  } else {
+    return 0
+  }
+}
 
 const getDirDepth = path => getFileDepth(path) - 1
 
